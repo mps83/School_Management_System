@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-icon id="backButton" name="arrow-back" (click)="back()"></ion-icon>
+    <ion-title>
+        Classes
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+    <ion-list>
+        <ion-item class="item" *ngFor="let item of items" (click)="openClass(item)">
+          <ion-icon [name]="item.icon" slot="start"></ion-icon>
+          {{item.title}}
+        </ion-item>
+      </ion-list>
+  </ion-grid>
+</ion-content>
