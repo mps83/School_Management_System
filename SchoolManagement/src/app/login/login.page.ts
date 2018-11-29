@@ -3,6 +3,7 @@ import { ApiService } from '../api.service';
 import { AuthGuardService } from '../auth-guard.service';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -12,9 +13,11 @@ export class LoginPage implements OnInit {
   loginData: any = [];
   password: any = '123456';
   email: any = 'mayank@gmail.com';
-
-  constructor(private storage: Storage, private apiService: ApiService, private authGuard: AuthGuardService, private router: Router) { }
+  selected: any;
+  constructor(public loadingCtrl: LoadingController, private storage: Storage,
+     private apiService: ApiService, private authGuard: AuthGuardService, private router: Router) { }
   login() {
+    console.log('parents');
     const body = {
       email: this.email,
       password: this.password

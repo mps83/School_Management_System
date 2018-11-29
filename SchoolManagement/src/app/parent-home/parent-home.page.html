@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Dashboard
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-img src="../../assets/icon/parents.jpg"></ion-img>
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card id="cards" (click)="openPage('/list')">
+            <ion-img class="classroom" src="../../assets/icon/seo-training.svg"></ion-img>
+            <ion-card-header>
+              <ion-card-title>PT Chat</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card id="cards" (click)="openPage('/timetable')">
+            <ion-img class="classroom" src="../../assets/icon/notebook.svg"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Attendance</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card id="cards" (click)="openPage('/holiday')">
+            <ion-img class="classroom" src="../../assets/icon/calendar (1).svg"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Holidays</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card id="cards" (click)="openPage('/login')">
+            <ion-img class="classroom" src="../../assets/icon/logout (1).svg"></ion-img>
+            <ion-card-header>
+              <ion-card-title>Sign Out</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

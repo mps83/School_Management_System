@@ -5,7 +5,7 @@ import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'accountSelector',
     pathMatch: 'full'
   },
   {
@@ -27,12 +27,30 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   { path: 'registeration', loadChildren: './registeration/registeration.module#RegisterationPageModule' },
-  { path: 'class', loadChildren: './class/class.module#ClassPageModule' },
-  { path: 'student', loadChildren: './student/student.module#StudentPageModule' }
+  {
+    path: 'class',
+    loadChildren: './class/class.module#ClassPageModule',
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'student',
+    loadChildren: './student/student.module#StudentPageModule',
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'accountSelector',
+    loadChildren: './account-selector/account-selector.module#AccountSelectorPageModule'
+  },
+  { path: 'parentSection', loadChildren: './parent-section/parent-section.module#ParentSectionPageModule' },
+  {
+    path: 'parentHome',
+    loadChildren: './parent-home/parent-home.module#ParentHomePageModule',
+    canActivate: [AuthGuardService]
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

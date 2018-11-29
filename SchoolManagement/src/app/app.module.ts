@@ -11,7 +11,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuardService } from './auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
-import { Content, NavController } from '@ionic/angular/';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
